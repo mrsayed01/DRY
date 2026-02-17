@@ -17,6 +17,7 @@
 
 # misc
 .DS_Store
+.git-dry/
 .env
 .env.local
 .env.development.local
