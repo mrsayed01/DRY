@@ -1,0 +1,129 @@
+
+.service-detail-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.service-content-wrapper {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.service-heading {
+    font-family: 'Playfair Display', serif;
+    color: #002147;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #d4af37; /* Gold accent */
+}
+
+.service-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.service-list li::before {
+    content: '\f00c'; /* FontAwesome Check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #28a745;
+}
+
+/* Form Styles */
+.service-form-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+    border-top: 5px solid #002147;
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    color: #002147;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.custom-input {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+}
+
+.custom-input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    background-color: #fff;
+    outline: none;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #002147 0%, #00428a 100%);
+    border: none;
+    padding: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 33, 71, 0.3);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    transform: none;
+    box-shadow: none;
+}

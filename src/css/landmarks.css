@@ -1,0 +1,201 @@
+.landmarks-page {
+    background-color: #f8f9fa;
+    padding-bottom: 80px;
+}
+
+.landmarks-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.landmarks-intro h1 {
+    font-family: var(--font-heading, 'Merriweather', serif);
+    color: var(--primary-color, #002147);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.landmarks-intro .lead {
+    font-family: var(--font-body, 'Open Sans', sans-serif);
+    color: #555;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.landmark-card {
+    background: white;
+    border-radius: 15px; /* More rounded */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Deeper shadow */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.03); /* Subtle border */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.landmark-card:hover {
+    transform: translateY(-15px); /* Higher lift */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-color: var(--accent-color, #fdc800); /* Accent border on hover */
+}
+
+.landmark-img-wrapper {
+    position: relative;
+    height: 300px; /* Taller images */
+    overflow: hidden;
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+.landmark-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease; /* Smoother zoom */
+}
+
+.landmark-card:hover .landmark-img-wrapper img {
+    transform: scale(1.15);
+}
+
+.landmark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 33, 71, 0.1), rgba(0, 33, 71, 0.6)); /* Gradient overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.landmark-overlay i {
+    color: var(--primary-color, #002147);
+    font-size: 1.5rem;
+    background: var(--accent-color, #fdc800);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: scale(0) rotate(-180deg); /* Rotate effect */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.landmark-card:hover .landmark-overlay {
+    opacity: 1;
+}
+
+.landmark-card:hover .landmark-overlay i {
+    transform: scale(1) rotate(0deg);
+}
+
+.landmark-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.landmark-title {
+    font-family: var(--font-heading, 'Merriweather', serif);
+    color: var(--primary-color, #002147);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.landmark-location {
+    color: var(--accent-color, #fdc800);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.landmark-location i {
+    margin-right: 8px;
+}
+
+.landmark-desc {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Lightbox Styles */
+.landmark-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    padding: 2rem;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.landmark-lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landmark-lightbox img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+.landmark-lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    outline: none;
+}
+
+.landmark-lightbox-close:hover {
+    transform: scale(1.1);
+    color: var(--accent-color, #fdc800);
+}
+
+.landmark-lightbox-caption {
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: var(--font-heading, 'Merriweather', serif);
+}

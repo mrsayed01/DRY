@@ -1,0 +1,100 @@
+/*******************************/
+/******* Page Header CSS *******/
+/*******************************/
+.page-header {
+    position: relative;
+    margin-bottom: 0;
+    padding: 150px 0 80px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 33, 71, 0.9), rgba(10, 10, 10, 0.9)), url(../assets/page-header.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+.page-header h2 {
+    position: relative;
+    color: var(--text-light);
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.page-header h2::after {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background: var(--accent-color);
+}
+
+.page-header a {
+    position: relative;
+    padding: 0 15px;
+    font-size: 18px;
+    color: var(--accent-color);
+    font-family: var(--font-body);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-header a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+.page-header a::after {
+    position: absolute;
+    content: "/";
+    width: 10px;
+    height: 10px;
+    top: 0;
+    right: -8px;
+    text-align: center;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.page-header a:last-child::after {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .page-header {
+        padding: 60px 0;
+        background-attachment: unset;
+    }
+    
+    .page-header h2 {
+        font-size: 45px;
+    }
+    
+    .page-header a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-header {
+        padding: 45px 0;
+    }
+    
+    .page-header h2 {
+        font-size: 35px;
+    }
+    
+    .page-header a {
+        font-size: 18px;
+    }
+}

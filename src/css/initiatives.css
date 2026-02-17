@@ -1,0 +1,81 @@
+.initiatives-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.initiatives-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.initiatives-header h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.initiatives-header p {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.initiative-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.initiative-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.initiative-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.initiative-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 32px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.initiative-card:hover .initiative-icon {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.initiative-title {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.initiative-desc {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 0;
+}

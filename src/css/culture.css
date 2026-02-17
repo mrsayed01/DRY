@@ -1,0 +1,97 @@
+.culture-page {
+    background-color: var(--bg-light);
+    padding-bottom: 80px;
+}
+
+.culture-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.culture-intro h1 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.culture-intro .lead {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.culture-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.culture-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.culture-img-wrapper {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.culture-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.culture-card:hover .culture-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.culture-content {
+    padding: 25px;
+}
+
+.culture-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.culture-text {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Icon overlay on image */
+.culture-icon {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: var(--shadow-md);
+}

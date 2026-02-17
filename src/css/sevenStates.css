@@ -1,0 +1,196 @@
+.seven-states-section {
+    position: relative;
+    padding: 100px 0;
+    background: #f8f9fa; /* Light background to match website theme */
+    color: #333;
+    overflow: hidden;
+}
+
+/* Add a subtle pattern overlay for texture */
+.seven-states-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ccc 1px, transparent 1px); /* Darker dots for light bg */
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.seven-states-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem; /* Balanced size */
+    font-weight: 800;
+    color: #003366; /* Deep Navy for title */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* text-shadow: 0 2px 4px rgba(0,0,0,0.1); Removed strong shadow */
+}
+
+.title-underline {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(to right, #d4af37, #f2d06b, #d4af37); /* Gold Gradient */
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.seven-states-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.15rem; /* Medium readable size */
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555; /* Darker grey for subtitle */
+}
+
+.seven-state-card {
+    background: #ffffff;
+    border-radius: 12px; /* Soft rounded corners */
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Softer shadow */
+    position: relative;
+    border: 1px solid #eee; /* Light border for definition */
+}
+
+/* Green accent line at the top */
+.seven-state-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #28a745, #218838); /* Green Gradient */
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.seven-state-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.seven-state-card:hover::after {
+    height: 8px; /* Thickens on hover */
+}
+
+.card-img-wrapper {
+    height: 220px; /* Optimal height */
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid #d4af37; /* Gold separator */
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.seven-state-card:hover .card-img-wrapper img {
+    transform: scale(1.15);
+}
+
+/* Overlay on image hover */
+.card-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.2); /* Subtle blue tint */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.seven-state-card:hover .card-img-wrapper::before {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 25px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    color: #003366; /* Deep Navy */
+    font-family: var(--font-heading);
+    font-size: 1.35rem; /* Medium-Large */
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.card-desc {
+    color: #555;
+    font-family: var(--font-body);
+    font-size: 0.95rem; /* Medium size */
+    line-height: 1.6;
+    margin-bottom: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-read-more {
+    background: transparent;
+    border: 2px solid #003366;
+    color: #003366;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: auto auto 0; /* Center horizontally */
+    border-radius: 50px; /* Pill shape */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-read-more::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #003366;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-read-more:hover {
+    color: white;
+    border-color: #003366;
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
+}
+
+.btn-read-more:hover::before {
+    width: 100%;
+}

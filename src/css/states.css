@@ -1,0 +1,229 @@
+.states-section {
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    background: #ffffff;
+}
+
+/* --- Sovereignty Text Section (The Dark Blue Area) --- */
+
+.sovereignty-text-container {
+    /* Rich background with image and overlay */
+    background: linear-gradient(rgba(0, 33, 71, 0.92), rgba(0, 15, 30, 0.95)), url('../assets/carousel-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect for "best" feel */
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    border-top: 5px solid var(--accent-color);
+    box-shadow: inset 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Decorative watermark logo */
+.sovereignty-text-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: url('../assets/logo.png') center/contain no-repeat;
+    opacity: 0.08; /* Slightly more visible than before */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* The "Plaque" or Framed Text Box */
+.sovereignty-text {
+    position: relative;
+    padding: 60px 50px;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--accent-color);
+    border-radius: 2px; /* Sharp corners for classic look */
+    max-width: 1100px;
+    margin: 0 auto;
+    z-index: 2;
+    /* Double border effect using box-shadow */
+    box-shadow: 
+        0 0 0 8px rgba(0, 33, 71, 0.8), /* Gap */
+        0 0 0 10px var(--accent-color), /* Outer gold line */
+        0 20px 50px rgba(0,0,0,0.5); /* Deep shadow */
+}
+
+/* Decorative Crown Icon at the top of the frame */
+.sovereignty-text::after {
+    content: "\f521"; /* FontAwesome Crown Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--accent-color);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 24px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.sovereignty-text p {
+    font-family: 'Merriweather', serif; /* Explicitly using the serif font */
+    font-size: 1.35rem;
+    line-height: 2.2;
+    color: #f0f0f0;
+    margin: 0;
+    font-weight: 300;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Classic Drop Cap */
+.sovereignty-text p::first-letter {
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.75;
+    padding-right: 20px;
+    padding-top: 5px;
+    color: var(--accent-color);
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- State Cards (The Top Row) --- */
+
+.state-card-new {
+    background: #fff;
+    padding: 40px 30px;
+    height: 100%;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* For hover effects */
+}
+
+/* Subtle pattern on card background */
+.state-card-new::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(#ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    transition: opacity 0.3s;
+}
+
+/* Gold line at bottom */
+.state-card-new::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--accent-color);
+    transition: all 0.4s ease;
+}
+
+.state-card-new:hover {
+    background: #ffffff;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.state-card-new:hover::after {
+    width: 100%;
+}
+
+.state-number {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5rem;
+    color: rgba(0, 33, 71, 0.08); /* Very subtle */
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1;
+    transition: all 0.4s ease;
+}
+
+.state-card-new:hover .state-number {
+    color: var(--accent-color);
+    transform: scale(1.05) translate(5px, -5px);
+    opacity: 0.3;
+}
+
+.state-title-new {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.state-card-new:hover .state-title-new {
+    color: var(--primary-color); /* Keep it dark, or maybe gold? Let's keep dark for contrast */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .state-card-new {
+        min-height: 180px;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .sovereignty-text {
+        padding: 40px 30px;
+        margin: 0 15px;
+    }
+    
+    .sovereignty-text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 768px) {
+    .sovereignty-text-container {
+        padding: 60px 0;
+    }
+    
+    .sovereignty-text {
+        padding: 30px 20px;
+        border-width: 1px;
+        box-shadow: 
+            0 0 0 4px rgba(0, 33, 71, 0.8), 
+            0 0 0 5px var(--accent-color), 
+            0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .sovereignty-text p::first-letter {
+        font-size: 3.5rem;
+        padding-right: 10px;
+    }
+}
